@@ -44,10 +44,23 @@ pipeline {
             }
         }
 
-        stage('deploy'){
+        stage('dockerizing'){
             steps{
-                sh 'java -jar ./build/libs/app.jar'
+                sh 'docker build -t ci/test .'
+            }
+        }
 
+        stage('Deploy') {
+            steps {
+                sh 'docker run -d -p 47788:47788 --name ci_test ci/test'
+            }
+
+            success {
+                echo 'success'
+            }
+
+            failure {
+                echo 'failed'
             }
         }
     }
