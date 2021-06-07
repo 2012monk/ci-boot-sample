@@ -27,9 +27,8 @@ pipeline {
 
         stage('build gradle') {
             steps {
-                sh  '''
-                ./gradlew build --exclude-task test
-                '''
+                sh  '/gradlew build'
+
 
                 sh 'ls -al ./build'
             }
