@@ -12,19 +12,16 @@ repositories {
     mavenCentral()
 }
 
-bootJar {
-    archivesBaseName = 'ex'
-    archiveFileName = 'app.jar'
-    archiveVersion = "0.0.1"
-}
-
-configurations {
-    jar.archiveName = 'app.jar'
-}
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+bootJar {
+    archivesBaseName = 'ex'
+    archiveFileName = 'app.jar'
+    archiveVersion = "0.0.1"
 }
 
 test {
