@@ -55,12 +55,14 @@ pipeline {
                 sh 'docker run -d -p 47788:47788 --name ci_test ci/test'
             }
 
-            success {
-                echo 'success'
-            }
+            post {
+                success {
+                    echo 'success'
+                }
 
-            failure {
-                echo 'failed'
+                failure {
+                    echo 'failed'
+                }
             }
         }
     }
