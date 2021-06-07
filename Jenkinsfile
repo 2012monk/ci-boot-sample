@@ -46,6 +46,7 @@ pipeline {
 
         stage('deploy'){
             steps{
+                dir('/build/libs/')
                 sh 'java -jar app.jar'
             }
         }
