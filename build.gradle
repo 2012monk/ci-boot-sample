@@ -12,6 +12,12 @@ repositories {
     mavenCentral()
 }
 
+bootJar {
+    archivesBaseName = 'ex'
+    archiveFileName = 'app.jar'
+    archiveVersion = "0.0.1"
+}
+
 configurations {
     jar.archiveName = 'app.jar'
 }
