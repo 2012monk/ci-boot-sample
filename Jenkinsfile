@@ -6,7 +6,7 @@ pipeline {
             agent any
 
             steps {
-                git checksum
+                checkout scm
             }
 
             post {
