@@ -43,5 +43,11 @@ pipeline {
                 }
             }
         }
+
+        stage('deploy'){
+            steps{
+                sh 'java -jar app.jar'
+            }
+        }
     }
 }
